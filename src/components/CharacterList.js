@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ListGroup } from 'reactstrap';
 
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 
 export default function CharacterList() {
 	// TODO: Add useState to track data from useEffect
@@ -20,5 +21,12 @@ export default function CharacterList() {
 			.catch((err) => console.log('Error: ', err));
 	}, []);
 
-	return <ListGroup className='character-list'>{characters.map((data) => <CharacterCard data={data} />)}</ListGroup>;
+	return (
+		<div>
+			<SearchForm characters={characters} />
+			<ListGroup className='character-list'>
+				{characters.map((data) => <CharacterCard key={data.id} data={data} />)}
+			</ListGroup>
+		</div>
+	);
 }
