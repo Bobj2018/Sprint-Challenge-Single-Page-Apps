@@ -13,9 +13,9 @@ export default function CharacterCard({ data }) {
 					<p>Status: {data.status}</p>
 					<p>Species: {data.species}</p>
 					<p>Gender: {data.gender}</p>
-					<p>Origin (Coming Soon)</p>
-					<p>Location (Coming Soon)</p>
-					<p>Episodes (Coming Soon)</p>
+					<p>Origin: {data.origin.name}</p>
+					<p>Location: {data.location.name}</p>
+					{/* <p>Episodes (Coming Soon)</p> */}
 				</Media>
 			</Media>
 		</ListGroupItem>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ListGroup } from 'reactstrap';
+import { ListGroup, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 
 import CharacterCard from './CharacterCard';

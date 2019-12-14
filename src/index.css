@@ -39,9 +39,9 @@ header h1 {
 }
 
 .media-body {
-	padding: 10px;
+	padding-left: 25px;
 }
 
-.charImg img{
-  width: 200px
+.charImg img {
+	/* width: 200px */
 }
