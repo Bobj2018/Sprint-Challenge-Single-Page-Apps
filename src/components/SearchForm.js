@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 // import { withFormik, Field, Form } from 'formik';
 
-export default function SearchForm({ characters }) {
+export default function SearchForm({ characters, onSearch }) {
 	const [ searchTerm, setSearchTerm ] = useState('');
 	const [ searchResults, setSearchResults ] = useState(characters);
 
@@ -12,9 +13,9 @@ export default function SearchForm({ characters }) {
 
 		const results = characters.filter((character) => {
 			return character.name.toLowerCase().includes(searchTerm.toLowerCase());
-
-			setSearchResults(results);
 		});
+
+		onSearch(event.target.value.toLowerCase());
 
 		const test = () => {
 			searchTerm = 'search';
@@ -24,16 +25,12 @@ export default function SearchForm({ characters }) {
 
 	return (
 		<section className='search-form'>
-			<p>{searchTerm}</p>
 			<form>
 				<label htmlFor='search'>
 					<input id='search' type='text' onChange={handleChange} value={searchTerm} />
 				</label>
 				<button>Submit</button>
 			</form>
-			{searchResults.map((character) => {
-				return <li key={character}>{character}</li>;
-			})}
 		</section>
 	);
 }
